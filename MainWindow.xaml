@@ -1,0 +1,273 @@
+﻿<Window x:Class = "kanti.MainWindow"
+        xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d = "http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc = "http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local = "clr-namespace:kanti"
+        mc:Ignorable = "d"
+        Title = "MainWindow" 
+        Height = "130" 
+        Width = "310" 
+        WindowStyle = "None" 
+        ResizeMode = "NoResize" 
+        Background = "#FF282828" 
+        Foreground = "White">
+ 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "30"/>
+            <RowDefinition Height = "60"/>
+            <RowDefinition Height = "40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name = "Header" Grid.Row = "0">
+            <StackPanel Orientation = "Horizontal" 
+                        HorizontalAlignment = "Right">
+                
+                <Image Name = "HideWindow"
+                       Height = "20" 
+                       Width = "20"
+                       Margin = "2, 4, 2, 2">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/WindowControl/HideLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = HideWindow}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/WindowControl/HideEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "CloseWindow"
+                       Height = "20" 
+                       Width = "20"
+                       Margin = "2, 4, 4, 2">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/WindowControl/CloseLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = CloseWindow}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/WindowControl/CloseEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+
+        <Grid Name = "Buttons" Grid.Row = "3">
+            <StackPanel Orientation = "Horizontal" 
+                        HorizontalAlignment = "Left">
+
+                <Image Name = "PlayClip"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "6, 4, 4, 4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/ClipControl/PlayLeave.png"
+                                    />
+                            
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = PlayClip}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/ClipControl/PlayEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "StopClip"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/ClipControl/StopLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = StopClip}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/ClipControl/StopEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "StepBackward"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/ClipControl/BackwardLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = StepBackward}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/ClipControl/BackwardEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "StepForward"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/ClipControl/ForwardLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = StepForward}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/ClipControl/ForwardEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "OpenFile"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/ClipControl/StopLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = OpenFile}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/ClipControl/StopEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+
+            <StackPanel Orientation = "Horizontal" 
+                        HorizontalAlignment = "Right">
+
+                <Image Name = "Setting"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/Options/SettingLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = Setting}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/Options/SettingEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image Name = "PlayList"
+                       Height = "30" 
+                       Width = "30"
+                       Margin = "4, 4, 6, 4">
+
+                    <Image.Style>
+                        <Style TargetType = "{x:Type Image}">
+                            <Setter Property = "Source" 
+                                    Value = "Pictures/PlayListControl/PlayListLeave.png"
+                                    />
+
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding = "{Binding IsMouseOver,
+                                                ElementName = PlayList}"
+                                    Value = "True">
+
+                                    <Setter Property = "Source" 
+                                            Value = "Pictures/PlayListControl/PlayListEnter.png"
+                                            />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
